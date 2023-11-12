@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@hr-acuity/elements": ["libs/ui/elements/src/index.ts"],
+      "@hr-acuity/ui/auth": ["libs/ui/auth/src/index.ts"],
+      "@hr-acuity/ui/generated": ["libs/ui/generated/src/index.ts"],
+      "@hr-acuity/ui/http": ["libs/ui/http/src/index.ts"],
+      "@hr-acuity/ui/utils": ["libs/ui/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
