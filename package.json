@@ -10,6 +10,8 @@
     "lint:staged": "lint-staged",
     "start": "nx run-many --all --target=serve",
     "start:api": "nx serve api",
+    "test": "nx run-many --all --target=test",
+    "test:e2e": "nx e2e client-e2e",
     "types": "openapi --input http://localhost:3000/api-json --output ./libs/ui/generated/src/lib/generated --exportServices=false --exportCore=false"
   },
   "config": {
@@ -63,7 +65,9 @@
     "@swc-node/register": "~1.6.7",
     "@swc/cli": "~0.1.62",
     "@swc/core": "~1.3.85",
-    "@testing-library/react": "14.0.0",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.4.0",
     "@types/node": "18.14.2",
     "@types/react": "18.2.33",

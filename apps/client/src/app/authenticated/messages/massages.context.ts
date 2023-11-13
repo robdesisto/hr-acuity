@@ -1,7 +1,7 @@
 import { createContext, Dispatch } from 'react';
 
 import { MessageAction, MessageState } from './types';
-import { InitialMessageState } from './massages.reducer';
+import { InitialMessageState } from './messages.reducer';
 
 type MessagesContextProps = {
   dispatch: Dispatch<MessageAction>

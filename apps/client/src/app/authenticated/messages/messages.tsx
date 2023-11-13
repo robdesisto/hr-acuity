@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 
 import { MessagesContext } from './massages.context';
-import { loadMessages } from './massages.reducer';
+import { loadMessages } from './messages.reducer';
 import { MessageEditor } from './message-editor';
 import { CreateMessage } from './create-message';
 import { ErrorText } from '@hr-acuity/elements';

@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@hr-acuity/elements": ["libs/ui/elements/src/index.ts"],
+      "@hr-acuity/testing": ["libs/ui/testing/src/index.ts"],
       "@hr-acuity/ui/auth": ["libs/ui/auth/src/index.ts"],
       "@hr-acuity/ui/generated": ["libs/ui/generated/src/index.ts"],
       "@hr-acuity/ui/http": ["libs/ui/http/src/index.ts"],

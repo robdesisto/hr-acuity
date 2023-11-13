@@ -1,13 +1,25 @@
-import { getGreeting } from '../support/app.po';
+import { getAppName, getLoginBtn } from '../support/app.po';
 
 describe('client-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should not login without credentials', () => {
+    getLoginBtn().click();
+    cy.get('#username-helper-text').contains('Please enter a username');
+    cy.get('#password-helper-text').contains('Please enter a password');
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(/Welcome/);
+  it('should not login with only one credential', () => {
+    cy.get('#username').type('someeusername');
+    getLoginBtn().click();
+    cy.get('#password-helper-text').contains('Please enter a password');
+  });
+
+  it('should login', () => {
+    cy.login('test@something.com', 'myPassword');
+    getAppName().contains(/HR Acuity Messenger/);
+    cy.logout();
   });
 });

@@ -6,7 +6,7 @@ import { Textarea } from '@hr-acuity/elements';
 import { Message } from '@hr-acuity/ui/generated';
 
 import { MessagesContext } from '../massages.context';
-import { deleteMessage, updateMessage } from '../massages.reducer';
+import { deleteMessage, updateMessage } from '../messages.reducer';
 
 type MessageProps = {
   message: Message;

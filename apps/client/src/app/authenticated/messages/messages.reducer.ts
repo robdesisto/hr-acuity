@@ -13,7 +13,7 @@ export const InitialMessageState: MessageState = {
   messages: []
 };
 
-export const MessageHandlers: Record<string, (state: MessageState, action: MessageAction) => MessageState> = {
+const MessageHandlers: Record<string, (state: MessageState, action: MessageAction) => MessageState> = {
   add(state: MessageState, { payload }: MessageAction<Message>) {
     const messages = [payload, ...state.messages];
     return { ...state, messages };
@@ -66,8 +66,6 @@ export async function loadMessages(dispatch: Dispatch<MessageAction>) {
 }
 
 export async function createMessage(message: string, dispatch: Dispatch<MessageAction>) {
-  // Clear the filter so that the created message doesn't get filtered out
-  dispatch({ type: 'filter', payload: '' });
   const { data } = await Http.instance.post('/api/messages', { message });
   dispatch({ type: 'add', payload: data });
 }

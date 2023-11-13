@@ -5,7 +5,7 @@ import { FormEvent, useContext, useState } from 'react';
 import { Textarea } from '@hr-acuity/elements';
 
 import { MessagesContext } from '../massages.context';
-import { createMessage } from '../massages.reducer';
+import { createMessage } from '../messages.reducer';
 
 const Form = styled.form`
   position: relative;
@@ -31,7 +31,7 @@ export function CreateMessage() {
   }
 
   return (
-    <Form onSubmit={create}>
+    <Form id="create-message" onSubmit={create}>
       <Textarea
         aria-label="Enter a message"
         minRows={2}
